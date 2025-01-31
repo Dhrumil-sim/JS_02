@@ -20,7 +20,35 @@ root {
     --card-bg-dark: #2B2B2B;
     --link-color-dark: #1E90FF;
 }
+/* Basic scrollbar styles */
+::-webkit-scrollbar {
+    width: 8px;  /* Set the width of the scrollbar */
+    height: 8px; /* Set the height of the scrollbar for horizontal scroll */
+}
 
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+    background: transparent; /* Make the track transparent */
+    border-radius: 4px; /* Optional: rounded corners */
+}
+
+/* Handle (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2); /* Set the color of the handle */
+    border-radius: 4px; /* Optional: rounded corners */
+    border: 2px solid transparent; /* Optional: add a slight border */
+    background-clip: content-box; /* Optional: keeps the background inside the thumb */
+}
+
+/* Handle hover state */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5); /* Darken the thumb color on hover */
+}
+
+/* Handle active state */
+::-webkit-scrollbar-thumb:active {
+    background: rgba(0, 0, 0, 0.7); /* Darken the thumb when actively scrolling */
+}
 body {
     font-family: 'Arial', sans-serif;
     background-color: var(--background-color-light);
@@ -251,6 +279,7 @@ td {
     max-width: 300px;
     height: auto;
     border-radius: 8px;
+    margin-bottom: 5px;
 }
 
 /* Features section container */
