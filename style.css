@@ -235,7 +235,7 @@ td {
 
 /* Left side (media section) */
 .media-section {
-    flex: 1; /* Take up remaining space */
+    flex: 3; /* Take up remaining space */
     margin-right: 20px;
 }
 
@@ -253,13 +253,21 @@ td {
     border-radius: 8px;
 }
 
-/* Right side (features section) */
+/* Features section container */
 .features-section {
-    flex: 1.5; /* Takes up more space */
+    flex: 1.5; /* Ensures the feature section takes more space */
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures there's no overflow beyond the section */
+    max-height: 200px; /* Set a max height for the feature section to make it scrollable */
+}
+
+/* If there are too many features, this allows scrolling */
+.feature-card {
+    max-height: 100%; /* Ensure the feature card fills its container */
+   overflow: hidden; /* Enable vertical scrolling if content exceeds height */
 }
 
 .feature-card h4 {
@@ -267,16 +275,20 @@ td {
     margin-bottom: 10px;
 }
 
+/* Feature list with vertical scrolling if necessary */
 .feature-card ul {
     list-style-type: disc;
     margin-left: 20px;
+    max-height: 400px; /* Set the maximum height to enable scrolling if there are too many features */
+    overflow-y: auto; /* Scroll vertically if the list is too long */
+    padding-right: 10px; /* Prevents clipping of the last item */
 }
 
 .feature-card li {
     margin-bottom: 10px;
 }
 
-/* No features available fallback */
+/* Handling the fallback when there are no features */
 .no-features {
     display: none;
 }
